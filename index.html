@@ -3,28 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tap Mining Game</title>
-    <link rel="stylesheet" href="style.css">
+    <title>BNB Mining App</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="game-container">
-        <div class="logo-container">
-            <img src="logo.png" alt="Logo" id="logo" class="logo">
+    <div class="crypto-background">
+        <!-- This div will contain animated cryptocurrency elements -->
+    </div>
+    <div class="background"></div>
+    <div class="container">
+        <div class="header">
+            <img src="https://cryptologos.cc/logos/binance-coin-bnb-logo.png" alt="BNB Logo" class="logo" id="bnbLogo">
+            <h1>BNB Mining App</h1>
         </div>
-        <div class="coin-counter">
-            <p>Coins: <span id="coin-count">0</span></p>
+        <div class="input-group" id="walletInput">
+            <label for="walletAddress">BEP20 Wallet Address:</label>
+            <input type="text" id="walletAddress" placeholder="Enter your BEP20 wallet address">
         </div>
-        <div class="button-container">
-            <button class="social-button">YouTube</button>
-            <button class="social-button">Twitter</button>
-            <button class="social-button">Telegram</button>
-            <button class="referral-button">Referral</button>
+        <div class="input-group" id="walletAddressVisible">
+            <label for="walletAddressVisibleInput">Sending Wallet Address:</label>
+            <input type="text" id="walletAddressVisibleInput" readonly>
+        </div>
+        <button id="startMining">Start Mining</button>
+        <div class="mining-status" id="miningStatus">
+            <p>Status: <span id="status">Not Mining</span></p>
+            <p>Earned BNB: <span id="earnedBNB">0.0000</span></p>
+        </div>
+        <div class="task-list" id="taskList">
+            <h2>Mining Tasks</h2>
+            <ul>
+                <li><a href="https://www.youtube.com/your_channel_link_here" target="_blank" id="youtubeTask">Subscribe to our YouTube channel (Earn 5 USDT)</a></li>
+                <li><a href="https://twitter.com/your_twitter_handle_here" target="_blank" id="twitterTask">Follow us on Twitter (Earn 5 USDT)</a></li>
+                <li><a href="#" id="referralTask">Refer a friend (Earn 5 USDT)</a></li>
+            </ul>
         </div>
     </div>
-    
     <script src="script.js"></script>
 </body>
 </html>
+
 
     </div>
     <script src="script.js"></script>
