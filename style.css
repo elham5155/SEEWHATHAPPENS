@@ -12,56 +12,194 @@ body {
     align-items: center;
     color: #fff;
 }
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
-.game-container {
-    text-align: center;
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #193524; /* Dark green background color */
+    overflow: hidden;
+    color: #000000; /* Setting text color to black */
 }
 
-.logo-container {
-    margin-bottom: 30px;
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://www.transparenttextures.com/patterns/cubes.png'), linear-gradient(135deg, #193524, #112e21); /* Dark green gradient */
+    z-index: -1;
+    animation: moveBackground 20s linear infinite;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* Added box shadow */
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    position: relative;
+    animation: fadeIn 1.5s ease;
+}
+
+.header {
+    position: relative;
+    margin-bottom: 20px;
 }
 
 .logo {
-    width: 200px;
-    height: 200px;
-    cursor: pointer;
-    animation: shake 0.5s infinite alternate;
+    width: 100px;
+    margin-bottom: 10px;
+    border-radius: 50%;
+    border: 5px solid white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    animation: rotate 4s linear infinite;
 }
 
-@keyframes shake {
-    from {
-        transform: translateX(0);
-    }
-    to {
-        transform: translateX(10px);
-    }
+.logo:hover {
+    transform: rotate(360deg);
 }
 
-.coin-counter {
+.input-group {
     margin-bottom: 20px;
-    font-size: 24px;
+    position: relative;
+    animation: fadeInUp 1s ease forwards;
 }
 
-.button-container {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 20px;
+input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+    color: #000000; /* Input text color changed to black */
+    background-color: rgba(255, 255, 255, 0.7); /* Transparent input background */
 }
 
-.social-button, .referral-button {
-    padding: 15px 30px;
-    font-size: 18px;
-    background-color: #4CAF50; /* Dark green color */
-    color: #fff;
+input:focus {
+    border-color: #28a745;
+    outline: none;
+}
+
+button {
+    padding: 12px 20px;
+    background-color: #28a745;
+    color: white;
     border: none;
-    border-radius: 8px;
+    border-radius: 5px;
     cursor: pointer;
+    width: 100%;
+    font-size: 16px;
     transition: background-color 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    animation: fadeInUp 1s ease forwards;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.social-button:hover, .referral-button:hover {
-    background-color: #45a049; /* Darker green on hover */
-    transform: translateY(-2px);
+button:hover {
+    background-color: #218838;
 }
 
+.mining-status {
+    margin-top: 20px;
+    text-align: left;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 10px;
+    border-radius: 5px;
+    animation: fadeInRight 1s ease forwards;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.mining-status p {
+    margin: 5px 0;
+    color: #000000; /* Text color changed to black */
+}
+
+.task-list {
+    margin-top: 20px;
+    text-align: left;
+    animation: fadeInLeft 1s ease forwards;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+.task-list h2 {
+    margin-bottom: 10px;
+    color: #ffffff; /* Heading text color remains white */
+}
+
+.task-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.task-list li {
+    margin-bottom: 10px;
+}
+
+.task-list a {
+    display: block;
+    padding: 10px;
+    background-color: rgba(40, 167, 69, 0.7); /* Transparent green background */
+    color: #000000; /* Black text color */
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.task-list a:hover {
+    background-color: rgba(33, 136, 56, 0.7); /* Darker green on hover */
+}
+.crypto-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    pointer-events: none; /* Allows clicking through this layer */
+    overflow: hidden;
+}
+
+.crypto-background .crypto {
+    position: absolute;
+    width: 150px; /* Adjust size as needed */
+    height: 150px; /* Adjust size as needed */
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.3);
+    animation: float 20s linear infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Example styling for specific cryptocurrencies */
+.crypto-background .btc {
+    background-image: url('https://cryptologos.cc/logos/bitcoin-btc-logo.png');
+    background-size: contain;
+}
+
+.crypto-background .eth {
+    background-image: url('https://cryptologos.cc/logos/ethereum-eth-logo.png');
+    background-size: contain;
+}
+
+/* Add more classes for other cryptocurrencies as needed */
